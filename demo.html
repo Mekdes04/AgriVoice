@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Voice | AI Operations Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <a href="index.html" class="logo" style="color: white; margin-bottom: 4rem;">AGRI-VOICE</a>
+            
+            <span class="label">System Status</span>
+            <div class="telemetry">
+                <div class="pill"><span>Uptime</span><span class="value">99.98%</span></div>
+                <div class="pill"><span>API Latency</span><span class="value">45ms</span></div>
+            </div>
+
+            <span class="label" style="margin-top: 3rem;">Model Engine</span>
+            <select style="background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; font-size: 0.8rem; outline: none;">
+                <option>AV-Amharic-v2.1</option>
+                <option>AV-Hindi-v4.0</option>
+            </select>
+
+            <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);">
+                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3);">© 2026 Agri-Voice Operations.</p>
+            </div>
+        </aside>
+
+        <!-- Center Workspace -->
+        <main class="dashboard-center">
+            <div id="initial-state" style="text-align: center; max-width: 500px; margin: 0 auto; z-index: 10;">
+                <h1 style="color: white; font-size: 3rem; letter-spacing: -2px; margin-bottom: 2rem;">Awaiting Voice <br> Input...</h1>
+                <p style="color: rgba(255,255,255,0.5); margin-bottom: 4rem;">Monitoring local PSTN gateways for incoming agricultural queries. </p>
+                <button class="btn btn-primary" id="start-btn" style="padding: 1.5rem 3.5rem; font-size: 1.1rem; box-shadow: 0 0 50px rgba(16, 185, 129, 0.4);">
+                    Simulate Incoming Call
+                </button>
+            </div>
+
+            <div id="call-state" style="display: none; height: 100%; flex-direction: column; justify-content: space-between; z-index: 10;">
+                <div class="panel" style="text-align: center; background: transparent; border: none;">
+                    <span class="label" id="current-step-label">Initializing Platform</span>
+                    <h1 id="query-text" style="color: white; font-size: 2.2rem; letter-spacing: -1px; min-height: 80px;">...</h1>
+                    
+                    <!-- Progress Bar Component -->
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="spectral-display" id="waveform">
+                    <div class="bar" style="height: 40px;"></div>
+                    <div class="bar" style="height: 100px;"></div>
+                    <div class="bar" style="height: 140px;"></div>
+                    <div class="bar" style="height: 60px;"></div>
+                    <div class="bar" style="height: 120px;"></div>
+                    <div class="bar" style="height: 180px;"></div>
+                    <div class="bar" style="height: 90px;"></div>
+                    <div class="bar" style="height: 140px;"></div>
+                    <div class="bar" style="height: 60px;"></div>
+                </div>
+
+                <div class="panel" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1);">
+                    <span class="label">System Pipeline Status</span>
+                    <div class="steps-container">
+                        <div class="step-item" id="step-1"><div class="dot"></div> Connecting call...</div>
+                        <div class="step-item" id="step-2"><div class="dot"></div> Farmer speaking...</div>
+                        <div class="step-item" id="step-3"><div class="dot"></div> Translating local language...</div>
+                        <div class="step-item" id="step-4"><div class="dot"></div> Analyzing disease...</div>
+                        <div class="step-item" id="step-5"><div class="dot"></div> Generating solution...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; opacity: 0.5;">
+                <svg width="100%" height="100%" viewBox="0 0 1000 1000">
+                    <circle cx="500" cy="500" r="400" stroke="rgba(16, 185, 129, 0.05)" stroke-width="2" fill="none" />
+                </svg>
+            </div>
+        </main>
+
+        <!-- Right Panel (Telemetry & Diagnosis) -->
+        <aside class="dashboard-right">
+            <span class="label">AI Cognitive Metrics</span>
+            <div class="telemetry" style="margin-bottom: 3rem;">
+                <div class="pill"><span>Inference Confidence</span><span class="value" id="prob-val">0.00%</span></div>
+                <div class="pill"><span>Language Accuracy</span><span class="value" id="dialect-val">0.00%</span></div>
+            </div>
+
+            <div id="diagnosis-panel">
+                <span class="label">Final AI Prescription</span>
+                <div class="panel" style="background: white; color: var(--text-main);">
+                    <div style="display: flex; gap: 15px; margin-bottom: 1.5rem; align-items: center;">
+                        <span style="font-size: 2.22rem;">🌾</span>
+                        <h3 style="color: var(--secondary); margin: 0;">Leaf Rust Detected</h3>
+                    </div>
+                    <img src="leaf_rust.png" alt="Leaf Rust" style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem;">
+                    <p style="font-size: 0.9rem; color: #555; line-height: 1.5; margin-bottom: 1.5rem;">Apply organic copper fungicide immediately. Isolate affected plants to prevent spread.</p>
+                    <button class="btn btn-primary" style="width: 100%; border-radius: 10px;" onclick="location.reload()">Reset Session</button>
+                </div>
+            </div>
+
+            <div id="diagnosis-placeholder" style="flex: 1; border: 1px dashed rgba(255,255,255,0.1); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
+                <p style="font-size: 0.85rem; color: rgba(255,255,255,0.3);">Diagnostic reports will populate here in real-time as the simulation proceeds.</p>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

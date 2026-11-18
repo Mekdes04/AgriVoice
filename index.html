@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Voice | Breaking the Silence for 1 Billion Farmers</title>
+    <meta name="description" content="AI-driven agricultural advice via simple phone calls. Bridging the digital divide with advanced localized intelligence.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">AGRI-VOICE</a>
+                <ul class="nav-links">
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#waitlist-anchor">Join Waitlist</a></li>
+                </ul>
+                <a href="demo.html" class="btn btn-primary">Launch Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <h1 class="reveal">Breaking the Silence for 1 Billion Farmers </h1>
+                <p class="reveal">Empowering smallholder farmers in Ethiopia and India with AI-driven agricultural insights through simple, voice-first phone calls. No internet. No complexity.</p>
+                <div class="hero-btns reveal">
+                    <a href="demo.html" class="btn btn-primary">Experience the AI Demo</a>
+                    <a href="#waitlist-anchor" class="btn btn-white">Join Global Pilot</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Features -->
+        <section id="technology">
+            <div class="container">
+                <div class="bento-grid">
+                    <div class="bento-item item-large reveal">
+                        <span class="icon">🌍</span>
+                        <h3>Localized Dialect LLMs</h3>
+                        <p>Our proprietary models are trained on the specific agricultural dialects of the Amhara and Punjab regions, ensuring high accuracy in nuance detection and advice.</p>
+                        <div style="margin-top: 2rem; display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span style="background: var(--bg-landing); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Oromo</span>
+                            <span style="background: var(--bg-landing); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Amharic</span>
+                            <span style="background: var(--bg-landing); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Hindi</span>
+                            <span style="background: var(--bg-landing); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Punjabi</span>
+                        </div>
+                    </div>
+                    <div class="bento-item item-medium reveal" style="background: var(--secondary); color: white;">
+                        <span class="icon">🛰️</span>
+                        <h3 style="color: white;">Zero-Data Connectivity</h3>
+                        <p style="color: rgba(255,255,255,0.7);">Built for the 2G PSTN network. Farmers access high-end AI intelligence from any phone call, bypassing the need for mobile data.</p>
+                    </div>
+                    <div class="bento-item item-small reveal">
+                        <span class="icon">🌡️</span>
+                        <h3>Precision Weather</h3>
+                        <p>Real-time micro-climate warnings delivered via voice.</p>
+                    </div>
+                    <div class="bento-item item-small reveal">
+                         <span class="icon">🦗</span>
+                        <h3>Pest Identification</h3>
+                        <p>Instant diagnostic plans via voice query.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Waitlist Form Section -->
+        <section id="waitlist-anchor" class="waitlist-section">
+            <div class="container reveal">
+                <h2 style="font-size: 3.5rem; margin-bottom: 2rem; color: var(--secondary);">Join our Global Pilot</h2>
+                <p style="max-width: 600px; margin: 0 auto 4rem; color: var(--text-muted); font-size: 1.25rem;">We're expanding to 10 new regions in 2026. Join the waitlist to be part of the future of agricultural intelligence.</p>
+                
+                <div class="form-container">
+                    <form id="waitlist-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="name@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" required>
+                                <option value="" disabled selected>Select your country</option>
+                                <option value="Ethiopia">Ethiopia</option>
+                                <option value="India">India</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="USA">USA</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.1rem;">
+                            Join Waitlist
+                        </button>
+                    </form>
+                    <div id="waitlist-success">
+                        You are successfully added to our global pilot program! 🌾
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 8rem 0; background: white; border-top: 1px solid #efefef; text-align: center;">
+        <div class="container">
+            <h2 class="logo" style="margin-bottom: 2rem; font-size: 2rem;">AGRI-VOICE</h2>
+            <p style="color: #999; font-size: 0.9rem;">Empowering the silent billion with the power of AI. <br> &copy; 2026 Agri-Voice Technologies.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

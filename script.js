@@ -137,3 +137,33 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 });
+// AgriVoice free browser speech recognition
+const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+if (SpeechRecognition) {
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "am-ET";
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onresult = (event) => {
+        const transcript =
+            event.results[0][0].transcript;
+
+        document.getElementById("query-text").textContent =
+            transcript;
+    };
+
+    recognition.onerror = (event) => {
+        alert("Speech recognition error: " + event.error);
+    };
+
+    window.startAgriVoice = () => {
+        recognition.start();
+    };
+} else {
+    alert("Speech recognition is not supported by this browser.");
+}

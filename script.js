@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (step.id === 3) {
                 // Transcription reveal
-                const query = '"Yellowing leaves on my wheat stalks... possible rust."';
+                const query = '"የስንዴ አገዳዎቼ ላይ ቅጠሎች ቢጫ ናቸው... ምናልባት ዋግ (የስንዴ ዝገት) ሊሆን ይችላል።"';
                 let current = "";
                 for(let char of query) {
                     current += char;
